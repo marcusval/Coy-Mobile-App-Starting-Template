@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="test2.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="MasterLayout">
+            
+            <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+                <Label x:Name="lbl_NoInternet" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red"/>
+
+                <Image x:Name="loginicon" Source="loginicon.png" Margin="0,80,0,0"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="LogInEntriesStack" VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>
+                            <OnPlatform x:TypeArguments="Thickness" iOS="40,0,40,0" Android="40,0,40,0" />
+                        </OnIdiom.Phone>
+                        <OnIdiom.Tablet>
+                            <OnPlatform x:TypeArguments="Thickness" iOS="140,150,140,0" Android="140,150,140,0" />
+                        </OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Green" IsRunning="True"/>
+
+                <Label x:Name="Lbl_Username" Text="Username" FontSize="Medium"/>
+                <Entry x:Name="Entry_Username" Placeholder="Enter Username" FontSize="Small"/>
+                <Label x:Name="Lbl_Password" Text="Password" FontSize="Medium"/>
+                <Entry x:Name="Entry_Password" Placeholder="Enter Password" FontSize="Small"/>
+                <Button x:Name="Btn_Signin" Text="Sign in" Clicked="SignInProcedure" CornerRadius="15" BackgroundColor= "#697775" 
+                        TextColor="LightGray" FontSize="Medium" FontAttributes="Bold"
+                        />
+
+            
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
